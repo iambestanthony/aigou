@@ -10,6 +10,7 @@
      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!--扫描com.mmall下的文件-->
     <context:component-scan base-package="com.mmall" annotation-config="true"/>
+    <context:component-scan base-package="com.jay.test" annotation-config="true"/>
 
     <!--<context:annotation-config/>-->
     <aop:aspectj-autoproxy/>

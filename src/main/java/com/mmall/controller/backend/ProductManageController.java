@@ -10,6 +10,7 @@ import com.mmall.service.IFileService;
 import com.mmall.service.IProductService;
 import com.mmall.service.IUserService;
 import com.mmall.util.PropertiesUtil;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -123,7 +124,8 @@ public class ProductManageController {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),"用户未登录,请登录管理员");
         }
         if(userService.checkAdminRole(user).isSuccess()){
-            String path = request.getSession().getServletContext().getRealPath("upload");
+            String path = request.getServletContext().getRealPath("/");
+            System.out.println("测试的位置：========================"+path);
             String targetFileName = fileService.upload(file,path);
             String url = PropertiesUtil.getProperty("ftp.server.http.prefix")+targetFileName;
 
@@ -135,8 +137,6 @@ public class ProductManageController {
             return ServerResponse.createByErrorMessage("无权限操作");
         }
     }
-    /*
-
 
 
 
@@ -158,7 +158,7 @@ public class ProductManageController {
 //        }
         if(userService.checkAdminRole(user).isSuccess()){
             String path = request.getSession().getServletContext().getRealPath("upload");
-            String targetFileName = iFileService.upload(file,path);
+            String targetFileName = fileService.upload(file,path);
             if(StringUtils.isBlank(targetFileName)){
                 resultMap.put("success",false);
                 resultMap.put("msg","上传失败");
@@ -175,6 +175,7 @@ public class ProductManageController {
             resultMap.put("msg","无权限操作");
             return resultMap;
         }
-    }*/
+    }
+
 
 }
