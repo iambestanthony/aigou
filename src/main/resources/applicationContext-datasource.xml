@@ -27,7 +27,7 @@
     <!--dbcp连接池配置-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${db.driverClassName}"/>
-        <property name="url" value="jdbc:mysql://120.79.185.18:3306/mmall?characterEncoding=utf-8"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/mmall?characterEncoding=utf-8"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
         <!-- 连接池启动时的初始值 -->
