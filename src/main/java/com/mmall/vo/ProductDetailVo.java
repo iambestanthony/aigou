@@ -3,9 +3,7 @@ package com.mmall.vo;
 import java.math.BigDecimal;
 
 /**
- * 简单模型：vo包value-object
- * 复杂模型：bo——>vo   bussiness objct->value-object
- *
+ * Created by geely
  */
 public class ProductDetailVo {
 
@@ -23,7 +21,7 @@ public class ProductDetailVo {
     private String updateTime;
 
 
-    private String imageHost;//图片的前缀
+    private String imageHost;
     private Integer parentCategoryId;
 
     public Integer getId() {

@@ -9,9 +9,10 @@ import java.io.InputStreamReader;
 import java.util.Properties;
 
 /**
- * Created by JayJ on 2018/4/15.
- **/
+ * Created by geely
+ */
 public class PropertiesUtil {
+
     private static Logger logger = LoggerFactory.getLogger(PropertiesUtil.class);
 
     private static Properties props;
@@ -42,6 +43,7 @@ public class PropertiesUtil {
         }
         return value.trim();
     }
+
 
 
 }
